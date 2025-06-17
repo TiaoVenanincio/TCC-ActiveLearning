@@ -6,8 +6,14 @@ class KMeansSampling(Strategy):
     def __init__(self, dataset, net):
         super(KMeansSampling, self).__init__(dataset, net)
 
-    def query(self, n):
-        unlabeled_idxs, unlabeled_data = self.dataset.get_unlabeled_data()
+    def query(self, n, dataset_subsample=None):
+        # Se unlabeled_data não for fornecido, obtemos os dados não rotulados do dataset
+        if dataset_subsample is None:
+            unlabeled_idxs, unlabeled_data = self.dataset.get_unlabeled_data()
+        else:
+            # Caso o dataset_subsample seja passado como argumento, precisamos definir os índices de unlabeled
+            unlabeled_idxs, unlabeled_data = dataset_subsample.get_unlabeled_data()
+        
         embeddings = self.get_embeddings(unlabeled_data)
         embeddings = embeddings.numpy()
         cluster_learner = KMeans(n_clusters=n)
@@ -19,4 +25,7 @@ class KMeansSampling(Strategy):
         dis = dis.sum(axis=1)
         q_idxs = np.array([np.arange(embeddings.shape[0])[cluster_idxs==i][dis[cluster_idxs==i].argmin()] for i in range(n)])
 
-        return unlabeled_idxs[q_idxs]
+        # Mapeia os índices locais (q_idxs) para os índices globais
+        global_idxs = [unlabeled_idxs[idx] for idx in q_idxs]
+        
+        return global_idxs
