@@ -1,31 +1,18 @@
-# TCC - Active Learning
+Deep Active Learning via Strategy Committees
 
-## Referências e Créditos
+Manual annotation remains a major bottleneck for training deep learning models in visual recognition tasks. Although Deep Active Learning reduces labeling effort, most prior studies evaluate acquisition criteria in isolation, leaving it unclear how complementary strategies should be systematically combined. This work addresses this limitation by investigating committee-based Deep Active Learning as a principled framework for unifying diversity- and uncertainty-driven sampling within a single, structured acquisition strategy. We combine Least Confidence, Margin Sampling, and Entropy Sampling with K-means-based diversity selection through explicit interaction schemes (sequential, intersection, and union) within a controlled incremental active learning protocol. Experiments on MNIST and FashionMNIST evaluate not only predictive accuracy but also class discovery dynamics and label correction behavior throughout the learning process. Results show that committee-based strategies match or surpass the best individual methods while accelerating class coverage and reducing annotation requirements. More importantly, we observe a consistent learning mechanism: diversity improves early representation coverage, whereas uncertainty-based criteria refine decision boundaries at later stages. The benefits increase with dataset complexity, transitioning from stability improvements on simpler datasets to measurable accuracy gains on more complex data. These findings provide empirical guidelines on when and how to combine acquisition criteria, highlighting the importance of balancing exploration and refinement for label-efficient deep active learning.
 
-Este trabalho se inspirou no código disponibilizado pelo projeto **DeepAL: Deep Active Learning in Python**.  
-- Huang, K.-H. (2021). *DeepAL: Deep Active Learning in Python*. arXiv preprint arXiv:2111.15258.  
-  Repositório original: https://github.com/ej0cl6/deep-active-learning
+Citation
 
-Referências bibliográficas completas podem ser encontradas na seção [Referências](#referências) deste README.
-
----
-
-## Referências
-
-[1] Lewis, D. D.; Gale, W. A. A Sequential Algorithm for Training Text Classifiers. SIGIR, 1994.  
-[2] Settles, B.; Craven, M.; Ray, S. Active Hidden Markov Models for Information Extraction. IDA, 2001.  
-[3] Settles, B. Active learning literature survey. University of Wisconsin–Madison, 2009.  
-[4] Gal, Y.; Islam, R.; Ghahramani, Z. Deep Bayesian Active Learning with Image Data. ICML, 2017.  
-[5] Sener, O.; Savarese, S. Active Learning for Convolutional Neural Networks: A Core-Set Approach. ICLR, 2018.  
-[6] Tam, P.; Husseini, E.; Nilimov, D. Adversarial Active Learning for Deep Networks: a Margin Based Approach. arXiv:1802.09841, 2018.  
-[7] Huang, K.-H. DeepAL: Deep Active Learning in Python. arXiv:2111.15258, 2021.  
-[8] 
-```
-inproceedings{deOliveira2023,
-  author    = {Eduardo R. de Oliveira and Pedro H. Bugatti and Priscila Tiemi Maeda Saito},
-  title     = {Assessment of clustering techniques to support the analyses of soybean seed vigor},
-  booktitle = {Plos One},
-  pages     = {1—17},
-  year      = {2023}
+If you think our work is meaningfull in your reasearch, please cite us:
+@inproceedings{Neto2026,
+  author    = {Sebastião V. G. Neto and Daniel M. Galetti and Pedro H. Bugatti and Cid A. N. Santos and Willian P. Amorim and Priscila T. M. Saito},
+  title     = {Deep Active Learning via Strategy Committees},
+  booktitle = {25th International Conference on Artificial Intelligence and Soft Computing},
+  pages     = {1—12},
+  year      = {2026}
 }
-```
+
+Acknowledgement
+
+This research has been supported by grants from UFSCar and Instituto de Pesquisas Eldorado.
