@@ -19,10 +19,13 @@ Referências bibliográficas completas podem ser encontradas na seção [Referê
 [5] Sener, O.; Savarese, S. Active Learning for Convolutional Neural Networks: A Core-Set Approach. ICLR, 2018.  
 [6] Tam, P.; Husseini, E.; Nilimov, D. Adversarial Active Learning for Deep Networks: a Margin Based Approach. arXiv:1802.09841, 2018.  
 [7] Huang, K.-H. DeepAL: Deep Active Learning in Python. arXiv:2111.15258, 2021.  
-[8] inproceedings{deOliveira2023,
+[8] 
+```
+inproceedings{deOliveira2023,
   author    = {Eduardo R. de Oliveira and Pedro H. Bugatti and Priscila Tiemi Maeda Saito},
   title     = {Assessment of clustering techniques to support the analyses of soybean seed vigor},
   booktitle = {Plos One},
   pages     = {1—17},
   year      = {2023}
 }
+```
